@@ -1,6 +1,0 @@
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/gtest_main.dir
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/gtest.dir
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/tests_ejercitacion.dir
-/Users/juaniponce/Desktop/DocsJuan/Algoritmos y Estructuras de datos II/Laboratorio/ejercitacion_uso_clases/cmake-build-debug/CMakeFiles/tests_algobot.dir

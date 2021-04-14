@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 
 using namespace std;
 
@@ -149,12 +150,12 @@ class Agenda {
     Agenda(Fecha fecha_inicial);
     void agregar_recordatorio(Recordatorio rec);
     void incrementar_dia();
-    vector<Recordatorio> recordatorios_de_hoy();
+    list<Recordatorio> recordatorios_de_hoy();
     Fecha hoy();
 
   private:
     Fecha hoy_;
-    vector<Recordatorio> recordatorios_de_hoy_;
+    list<Recordatorio> recordatorios_de_hoy_;
 
 };
 
@@ -172,8 +173,8 @@ void Agenda::incrementar_dia() {
     hoy_.incrementar_dia();
 }
 
-vector<Recordatorio> Agenda::recordatorios_de_hoy() {
-    vector<Recordatorio> rec_de_hoy;
+list<Recordatorio> Agenda::recordatorios_de_hoy() {
+    list<Recordatorio> rec_de_hoy;
     for (Recordatorio r : recordatorios_de_hoy_){
         if (r.fecha() == hoy_){
             rec_de_hoy.push_back(r);
@@ -182,30 +183,28 @@ vector<Recordatorio> Agenda::recordatorios_de_hoy() {
     return rec_de_hoy;
 }
 
-vector<Recordatorio> rec_ordenado(vector<Recordatorio> v){
-    vector<Recordatorio> res;
-    Recordatorio min = v[0];
-    for (Recordatorio t : v){
-        for (Recordatorio r : v){
-            if (r.horario() < min.horario()){
-                min = r;
-            }
-        }
-        res.push_back(min);
-    }
+list<Recordatorio> swapRec(list<Recordatorio>& lr, Recordatorio a, Recordatorio b){
+    Recordatorio valor = a;
+    a = b;
+    b = valor;
+    return lr;
+}
 
+list<Recordatorio> ordenar_rec(list<Recordatorio> lr){
+    for (Recordatorio r : lr){
+        for (Recordatorio s : lr){
+            if (s.horario() < r.horario()) swapRec(lr, r, s);
+        }
+    }
+    return lr;
 }
 
 ostream& operator<<(ostream& os, Agenda a){
-    vector<Recordatorio> rec_de_hoy = a.recordatorios_de_hoy();
+    list<Recordatorio> rec_ord_de_hoy = ordenar_rec(a.recordatorios_de_hoy());
     os << a.hoy() << endl;
     os << "=====" << endl;
-    for (int i = 0; i < rec_de_hoy.size(); i++){
-            for (int j = 1; j < rec_de_hoy.size(); i++){
-                if (rec_de_hoy[j].horario() < rec_de_hoy[i].horario()){
-                    rec_de_hoy.swap(rec_de_hoy[j], rec_de_hoy[i]);
-                }
-            }
+    for (Recordatorio r : rec_ord_de_hoy) {
+        os << r << endl;
     }
     return os;
 }

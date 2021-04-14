@@ -183,17 +183,18 @@ list<Recordatorio> Agenda::recordatorios_de_hoy() {
     return rec_de_hoy;
 }
 
-list<Recordatorio> swapRec(list<Recordatorio>& lr, Recordatorio a, Recordatorio b){
+void swapRec(list<Recordatorio>& lr, Recordatorio& a, Recordatorio& b){
     Recordatorio valor = a;
     a = b;
     b = valor;
-    return lr;
 }
 
 list<Recordatorio> ordenar_rec(list<Recordatorio> lr){
     for (Recordatorio r : lr){
         for (Recordatorio s : lr){
-            if (s.horario() < r.horario()) swapRec(lr, r, s);
+            if (s.horario() < r.horario()){
+                swapRec(lr, r, s);
+            }
         }
     }
     return lr;

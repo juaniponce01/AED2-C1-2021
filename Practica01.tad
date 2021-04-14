@@ -1,0 +1,273 @@
+2)a) #Hojas: ab(α) -> Nat
+#Hojas(nil) ≡ 0
+#Hojas(a) ≡ if esHoja?(a) then 1 else #Hojas(izq(a)) + #Hojas(der(a)) fi
+
+b) DegeneradoAIzquierda: ab(α) -> bool
+DegeneradoAIzquierda(nil) ≡ true
+DegeneradoAIzquierda(bin(a, e, b)) ≡ if nil?(b) then DegeneradoAIzquierda(a) else false fi
+
+c) ZigZag: ab(α) -> bool
+ZigZag(nil) ≡ true
+ZigZag(bin(a, e, b)) ≡ if nil?(a) then
+													nil?(izq(b)) ∧ ZigZag(b)
+											 else
+											 		if nil?(b) then
+											 			nil?(izq(a)) ∧ ZigZag(a)
+											 		else
+											 			false
+											 		fi
+											 fi
+											
+d) UltimoNivelCompleto: ab(α) -> Nat
+UltimoNivelCompleto(nil) ≡ 0
+UltimoNivelCompleto(bin(a, e, b)) ≡ 1 + min(UltimoNivelCompleto(a), UltimoNivelCompleto(b))
+											
+e) Espejo: ab(α) -> ab(α)
+Espejo(nil) ≡ nil
+Espejo(bin(a, e, b)) ≡ bin(Espejo(b), e, Espejo(a))
+
+f) EsSimetrico?: ab(α) -> bool
+EsSimetrico?(nil) ≡ true
+EsSimetrico?(a) ≡ Espejo(a)
+
+
+3)a) PartesDe: conj(α) → conj(conj(α))
+PartesDe(Ø) ≡ Ø
+PrtesDe(conj(α)) ≡ Ag()
+
+b) combinacionesDeK: c × k -> conj(conj(α))
+combinacionesDeK(Ø, k) ≡ Ø
+combinacionesDeK(c, k) ≡ if #(dameUno(PartesDe(c))) = k then
+												 	 Ag(dameUno(PartesDe(c)), combinacionesDeK(sinUno(dameUno(PartesDe(c)))))
+												 else
+												   combinacionesDeK(sinUno(dameUno(PartesDe(c))))
+												 fi
+---el de Gabi---
+b ⊆ combinacionesDeK(c) ↔ b ∈ PartesDe(c) ∧ #b = k ≡ true
+
+
+4)a) NTN: conj(secu(α)) × secu(α) -> conj(secu(α))
+NTN(Ø, <>) ≡ Ø
+NTN(cs, s) ≡ 
+if esSubsecuencia(dameUno(cs), s) ∧ ¬esPrefijo?(NTN(cs, s), s) then
+	Ag(dameUno(cs), NTN(sinUno(dameUno(cs))))
+else
+	NTN(sinUno(dameUno(cs)))
+fi 
+
+esSubsecuencia: conj(secu(α)) × secu(α) -> bool
+esSubsecuencia(Ø, <>) ≡ true
+esSubsecuencia(cs, s) ≡ 
+
+
+5)a) NivelNormal?: at(α) × int -> bool
+NivelNormal?(α, 0) ≡ ¬nil?(α)
+NivelNormal?(tern(a, b, c, e), k) ≡ NivelNormal?(a, k-1) ∧ NivelNormal?(b, k-1) ∧ NivelNormal?(c, k-1)
+
+b) Acotado?: at(α) × int -> bool
+Acotado?(nil, k) ≡ true
+Acotado?(tern(a, b, c, e), k) ≡ if cantNodos(e) ≤ k then
+																	Acotado?(a, k) ∧ Acotado?(b, k) ∧ Acotado?(c, k)
+																else
+																	false
+																fi
+
+tamaño: at(α) -> int
+tamaño(α) ≡ if nil?(α) then 0 else 1 + tamaño(izq(α)) + tamaño(der(α))
+
+
+6)a) altura: rosetree(α) -> int
+altura(rose(a, s)) ≡ 1 + alturalista(s)
+
+alturalista: secu(rose(α)) -> int
+alturalista(<>) ≡ 0
+alturalista(x • s) ≡ max(altura(x), alturalista(s))  
+
+b) #Hojas: rosetree(α) -> int
+#Hojas(rose(a, rs)) ≡ #HojasSecu(rs)
+
+#HojasSecu: secu(rose(α)) -> int
+#HojasSecu(<>) ≡ 1
+#HojasSecu(x • s) ≡ #Hojas(x) + #HojasSecu(s) 
+
+c) podar: rosetree(α) -> rosetree(α)
+podar(rose(a, <>)) ≡ <>
+podar(rose(a, rs)) ≡ rose(a, podarSecu(rs))
+
+podarSecu: secu(rose(α)) -> secu(rose(α))
+podarSecu(<>) ≡ <>
+podarSecu(x • s) ≡ podar(x) • podarSecu(s)
+
+d) ramas: secu(secu(α)) -> secu(secu(α))
+ramas(r • ramas) ≡ if cantNodos(r) = n then r • else sino fi
+// FALTA
+
+e)
+// rose(a, rose(b, <>) . <>)
+// rose(a, <>)
+// 
+// rose(1, <>) 
+// FALTA
+
+f) 
+// FALTA
+
+7)
+TAD Polinomio
+	Igualdad Observacional:
+	Generos: polinomio
+	
+	Observadores Basicos:
+		evaluar: polinomio × nat     -> nat
+	Generadores:
+		cte: nat 									   -> polinomio
+		X: 											 		 -> polinomio
+		• + •: polinomio x polinomio -> polinomio
+		• . •: polinomio x polinomio -> polinomio
+	Otras Operaciones:
+		esRaiz: polinomio x nat      -> bool
+	Axiomas:
+		evaluar(cte(n1), n2) ≡ n1
+		evaluar(X, n) 			 ≡ n
+		evaluar(p1 + p2, n)  ≡ evaluar(p1, n) + evaluar(p2, n)
+		evaluar(p1 . p2, n)  ≡ evaluar(p2, n) . evaluar(p2, n)
+		esRaiz(p, n)         ≡ evaluar(p, n) = 0 
+Fin TAD
+
+8)
+TAD Robot
+	Igualdad Observacional:
+	Generos: robot
+	
+	Observadores Basicos:
+		trayectoria: robot    -> secuencia(coordenada)
+	Generadores:
+		ubicar:	coordenada		-> robot
+		arriba: robot         -> robot
+		abajo: robot          -> robot
+		derecha: robot        -> robot
+		izquierda: robot      -> robot
+	Otras Operaciones:
+		PosicionActual:	robot                -> coordenada
+		CuantasVecesPaso: coordenada × robot -> nat
+		MasALaDerecha: robot                 -> coordenada
+	Axiomas: 
+		trayectoria(ubicar(c))    ≡ c • <>
+		trayectoria(arriba(r))    ≡ (π1(prim(s)), π2(prim(s)) + 1) • trayectoria(r)
+		trayectoria(abajo(r))     ≡ (π1(prim(s)), π2(prim(s)) - 1) • trayectoria(r)
+		trayectoria(derecha(r))   ≡ (π1(prim(s)) + 1, π2(prim(s))) • trayectoria(r)
+		trayectoria(izquierda(r)) ≡ (π1(prim(s)) - 1, π2(prim(s))) • trayectoria(r)
+		PosicionActual(r) 				≡ prim(trayectoria(r))
+		CuantasVecesPaso(c, r)    ≡ cantApariciones(c, trayectoria(r))
+		MasALaDerecha(r)				  ≡ π2(prim(trayectoria(r))) < π2(MasALaDerecha(r)) 
+Fin TAD
+		
+9)
+TAD Electroiman
+	Igualdad Observacional:
+	Generos: electroiman
+	
+	Observadores Basicos:
+		Cinta:	electroiman	-> cinta
+		ImanPrendido: electroiman -> bool
+		ImanCargado: electroiman e -> bool {ImanPrendido(e)}
+	Generadores:
+		Arrancar:	cinta		-> electroiman
+		Prender: electroiman e -> electroiman {¬ImanPrendido(e)}
+		Apagar: electroiman e -> electroiman {ImanPrendido(e) ∧L (ImanCargado(e) → ¬CeldaActualOcupada(e))}
+		← : electroiman -> electroiman
+		→ : electroiman -> electroiman
+	Otras Operaciones:
+		CeldaActualOcupada:	electroiman	-> bool
+		#Giros ← : electroiman -> nat
+		#Giros → : electroiman -> nat
+	Axiomas:
+		
+Fin TAD
+		
+10) TAD Stock
+	Igualdad Observacional:();
+	Géneros: stock
+	Exporta: stock, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		productos: stock -> dicc(producto, cantidad)
+		stockDelProducto: stock -> cantidad
+		cantCompras: producto -> cantidad
+		cantVentas: producto -> cantidad
+		sinStock: stock -> conj(producto)
+		
+	Generadores:
+		nuevoProducto: producto × cantidad -> stock
+		compra: producto × cantidad -> stock
+		venta: string × cantidad -> stock
+		sustituto: string × nat -> stock
+		
+		
+	Otras Operaciones:
+		otra:	nombreTad t × nat n	-> bool 	{ n ≥ 1 }
+	Axiomas:
+		obs?(nil)	= 	true
+		otra(t, n)	= 	n
+		...
+Fin TAD
+
+TAD Producto ES string
+TAD Cantidad ES nat
+
+
+13)
+TAD Colectivo
+	Igualdad Observacional:();
+	Géneros: colectivo
+	Exporta: colectivo, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		asientosEn: colectivo -> nat
+		pasajerosEn: colectivo -> nat
+		paradasEn: colectivo -> paradas
+		seBajan: colectivo c × nat n -> nat {0 < n ≤ long(paradas(c))}
+		
+	Generadores:
+		nuevoColectivo: asientos × paradas -> colectivo
+		entraPasajero: colectivo c × nat n -> colectivo {0 < n ≤ long(paradas(c))}
+		
+	Otras Operaciones:
+		asientosLibres: colectivo -> nat
+	
+	Axiomas: ∀ (a: asientos), ∀ (c: colectivo), ∀ (p: paradas)
+		asientosLibres(nuevoColectivo(a, p)) ≡ a
+		asientosLibres(entraPasajero(c, n)) ≡ asientosLibres(c) - 1
+		
+		pasajerosEn(nuevoColectivo(a, p)) ≡ 0
+		pasajerosEn(entraPasajero(c, n)) ≡ pasajerosEn(c) + 1
+		
+		paradasEn(nuevoColectivo(a, p)) ≡ p
+		paradasEn(entraPasajero(c, n)) ≡ 
+		if n = 1 then
+			prim(paradasEn(entraPasajero(c, n - 1))) - 1
+		else
+			ult(paradasEn(entraPasajero(c, n - 1)))
+		fi
+		
+		seBajan(nuevoColectivo(a, p)) ≡ 0
+		seBajan(entraPasajero(c, n'), n) ≡  
+		if n = n' then
+			if n = 1 then
+				prim(entraPasajero(c, n - 1))
+			else
+				sino
+			fi
+			paradas()
+		else
+			sino
+		fi
+		
+		
+		
+Fin TAD
+
+TAD Paradas ES secu(nat)
+TAD Asientos ES nat

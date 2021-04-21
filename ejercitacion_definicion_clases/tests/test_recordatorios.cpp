@@ -111,8 +111,8 @@ TEST(Recordatorio, ostream) {
 #if EJ >= 14
 TEST(Agenda, ordenado) {
   Agenda a(Fecha(5, 10));
-  a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(11, 0), "Labo Algo2"));
   a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(9, 0), "Clase Algo2"));
+  a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(11, 0), "Labo Algo2"));
 
   stringstream ss;
   ss << a;
@@ -122,6 +122,21 @@ TEST(Agenda, ordenado) {
   ss2 << "Clase Algo2 @ 10/5 9:0" << endl;
   ss2 << "Labo Algo2 @ 10/5 11:0" << endl;
   EXPECT_EQ(ss.str(), ss2.str());
+}
+
+TEST(Agenda, desordenado) {
+    Agenda a(Fecha(5, 10));
+    a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(11, 0), "Labo Algo2"));
+    a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(9, 0), "Clase Algo2"));
+
+    stringstream ss;
+    ss << a;
+    stringstream ss2;
+    ss2 << "10/5" << endl;
+    ss2 << "=====" << endl;
+    ss2 << "Clase Algo2 @ 10/5 9:0" << endl;
+    ss2 << "Labo Algo2 @ 10/5 11:0" << endl;
+    EXPECT_EQ(ss.str(), ss2.str());
 }
 
 TEST(Agenda, cambio_dia) {
@@ -146,20 +161,5 @@ TEST(Agenda, cambio_dia) {
   ss2c << "Clase Algo2 @ 10/5 9:0" << endl;
   ss2c << "Labo Algo2 @ 10/5 11:0" << endl;
   EXPECT_EQ(ss2.str(), ss2c.str());
-}
-
-TEST(Agenda, desordenado) {
-    Agenda a(Fecha(5, 10));
-    a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(11, 0), "Labo Algo2"));
-    a.agregar_recordatorio(Recordatorio(Fecha(5, 10), Horario(9, 0), "Clase Algo2"));
-
-    stringstream ss;
-    ss << a;
-    stringstream ss2;
-    ss2 << "10/5" << endl;
-    ss2 << "=====" << endl;
-    ss2 << "Clase Algo2 @ 10/5 9:0" << endl;
-    ss2 << "Labo Algo2 @ 10/5 11:0" << endl;
-    EXPECT_EQ(ss.str(), ss2.str());
 }
 #endif

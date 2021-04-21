@@ -22,9 +22,7 @@ uint dias_en_mes(uint mes) {
 class Fecha {
   public:
     // Completar declaraciones funciones
-    #if EJ >= 9 // Para ejercicio 9
     bool operator==(Fecha o);
-    #endif
     Fecha(int mes, int dia);
     uint mes();
     uint dia();
@@ -50,13 +48,21 @@ ostream& operator<<(ostream& os, Fecha f) {
     return os;
 }
 
-#if EJ >= 9
 bool Fecha::operator==(Fecha o) {
     bool igual_dia = this->dia() == o.dia();
     bool igual_mes = this->mes() == o.mes();
     return igual_dia & igual_mes;
 }
-#endif
+
+bool operator<(Fecha f, Fecha g){
+    bool dia_menor = f.dia() < g.dia();
+    bool mes_menor = f.mes() < g.mes();
+    if (f.mes() == g.mes()){
+        return dia_menor;
+    } else {
+        return mes_menor;
+    }
+}
 
 void Fecha::incrementar_dia() {
     if (dias_en_mes(mes_) == dia_) {
@@ -117,6 +123,7 @@ class Recordatorio {
     Fecha fecha();
     Horario horario();
     string mensaje();
+    bool operator==(Recordatorio o);
 
   private:
     Fecha fecha_;
@@ -136,6 +143,23 @@ Horario Recordatorio::horario() {
 
 string Recordatorio::mensaje() {
     return mensaje_;
+}
+
+bool Recordatorio::operator==(Recordatorio o){
+    bool igual_fecha = fecha() == o.fecha();
+    bool igual_horario = horario() == o.horario();
+    bool igual_mensaje = mensaje() == o.mensaje();
+    return igual_fecha & igual_horario & igual_mensaje;
+}
+
+bool operator<(Recordatorio r, Recordatorio s){
+    bool menor_fecha = r.fecha() < s.fecha();
+    bool menor_horario = r.horario() < s.horario();
+    if (r.fecha() == s.fecha()){
+        return menor_horario;
+    } else {
+        return menor_fecha;
+    }
 }
 
 ostream& operator<<(ostream& os, Recordatorio r) {
@@ -180,31 +204,14 @@ list<Recordatorio> Agenda::recordatorios_de_hoy() {
             rec_de_hoy.push_back(r);
         }
     }
+    rec_de_hoy.sort();
     return rec_de_hoy;
 }
 
-void swapRec(list<Recordatorio>& lr, Recordatorio& a, Recordatorio& b){
-    Recordatorio valor = a;
-    a = b;
-    b = valor;
-}
-
-list<Recordatorio> ordenar_rec(list<Recordatorio> lr){
-    for (Recordatorio r : lr){
-        for (Recordatorio s : lr){
-            if (s.horario() < r.horario()){
-                swapRec(lr, r, s);
-            }
-        }
-    }
-    return lr;
-}
-
 ostream& operator<<(ostream& os, Agenda a){
-    list<Recordatorio> rec_ord_de_hoy = ordenar_rec(a.recordatorios_de_hoy());
     os << a.hoy() << endl;
     os << "=====" << endl;
-    for (Recordatorio r : rec_ord_de_hoy) {
+    for (Recordatorio r : a.recordatorios_de_hoy()) {
         os << r << endl;
     }
     return os;

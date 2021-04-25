@@ -26,6 +26,8 @@ class SistemaDeMensajes {
     // Pre: registrado(id)
     string ipJugador(int id) const;
 
+    ~SistemaDeMensajes();
+
   private:
     ConexionJugador* _conns[4];
 };

@@ -3,6 +3,7 @@
 
 #include "ConexionJugador.h"
 #include <string>
+#include <vector>
 
 #if EJ == 4 || EJ == 5
 #include "Proxy.h"
@@ -28,8 +29,13 @@ class SistemaDeMensajes {
 
     ~SistemaDeMensajes();
 
+    void desregistrarJugador(int id);
+
+    Proxy* obtenerProxy(int id);
+
   private:
     ConexionJugador* _conns[4];
+    vector<Proxy*> _vpr;
 };
 
 #endif

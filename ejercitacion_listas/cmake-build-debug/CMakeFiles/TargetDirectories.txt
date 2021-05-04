@@ -1,0 +1,6 @@
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/correrValgrind.dir
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/correrTests.dir
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/gtest_main.dir
+/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion listas/alumnos/cmake-build-debug/CMakeFiles/gtest.dir

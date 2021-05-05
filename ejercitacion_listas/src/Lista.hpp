@@ -10,8 +10,9 @@ Lista::Lista(const Lista& l) : Lista() {
 }
 
 Lista::~Lista() {
-    for (int i = 0; i < longitud_; ++i) {
-        eliminar(i);
+    int cant = longitud_;
+    for (int i = 0; i < cant; ++i) {
+        eliminar(0);
     }
 }
 
@@ -43,7 +44,7 @@ void Lista::agregarAdelante(const int& elem) {
         while(m->next != NULL){
             m = m->next;
         }
-        if (m != last){
+        if (m != last){ // uno lo ultimo del head con lo primero del last
             Nodo* d = last;
             while(d->back != NULL){
                 d = d->back;

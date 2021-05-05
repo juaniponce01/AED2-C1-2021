@@ -39,7 +39,7 @@ bool operator<(Fecha f, Fecha g){
 void Fecha::incrementar_dia() {
     if (dias_en_mes(mes_) == dia_) {
         dia_ = 1;
-        mes_++;
+        mes_ = (mes_ + 1) % 12;
     } else {
         dia_++;
     }

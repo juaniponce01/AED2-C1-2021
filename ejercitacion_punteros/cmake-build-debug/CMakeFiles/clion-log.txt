@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros
+Test:src/Internet.cppsrc/ConexionJugador.cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug

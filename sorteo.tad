@@ -1,0 +1,36 @@
+TAD Sorteo
+	Igualdad Observacional:();
+	Géneros: sorteo
+	Exporta: sorteo, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		personas: sorteo -> multiconj(persona)
+		dineroRecaudado: soreto -> dinero
+		ticketsVendidos: soreto -> multiconj(ticket)
+		sorteoCerrado?: sorteo -> bool
+		ganadores: soreto s -> conj(persona) {sorteoCerrado?(s)}
+		
+	Generadores:
+		iniciarSorteo:  -> sorteo
+		comprarTicket: persona p × dinero × ticket t × sorteo a -> sorteo {¬ludopata?(p) ∧ ¬sorteoCerrado?(s) ∧ dinero ∈ {100, 500, 1000} ∧ long(t) = 6 ∧ }
+		cerrarSorteo: sorteo -> sorteo
+		
+	Otras Operaciones:
+		
+	Axiomas:
+		personas(iniciarSorteo()) ≡ Ø
+		personas(comprarTicket(p, d, t, s)) ≡ Ag(p, personas(s))
+		
+		dineroRecaudado(iniciarSorteo()) ≡ 0
+		dineroRecaudado(comprarTicket(p, d, t, s)) ≡ d + dineroRecaudado(s)
+		
+		ticketsVendidos(iniciarSorteo()) ≡ Ø
+		ticketsVendidos(comprarTicket(p, d, t, s)) ≡ Ag(n, ticketsVendidos(s)) 
+		
+		
+Fin TAD
+
+TAD Ticket ES secu(nat)
+TAD Persona ES string
+TAD Dinero ES nat

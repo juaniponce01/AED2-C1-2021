@@ -110,23 +110,23 @@ TEST(lista_test, test_eliminar_elementos_atras) {
 
 TEST(lista_test, test_eliminar_elementos_adelante) {
     Lista l;
-    l.agregarAdelante(45);
+    l.agregarAtras(45);
     l.agregarAdelante(44);
     l.agregarAdelante(43);
     l.agregarAdelante(42);
 
-    l.eliminar(1);
+    l.eliminar(3);
 
     ASSERT_EQ(l.longitud(), 3);
     ASSERT_EQ(l.iesimo(0), 42);
-    ASSERT_EQ(l.iesimo(1), 44);
-    ASSERT_EQ(l.iesimo(2), 45);
+    ASSERT_EQ(l.iesimo(1), 43);
+    ASSERT_EQ(l.iesimo(2), 44);
 
     l.eliminar(2);
 
     ASSERT_EQ(l.longitud(), 2);
     ASSERT_EQ(l.iesimo(0), 42);
-    ASSERT_EQ(l.iesimo(1), 44);
+    ASSERT_EQ(l.iesimo(1), 43);
 
     l.eliminar(0);
     l.eliminar(0);

@@ -1,8 +1,8 @@
 #include "Lista.h"
 
-Lista::Lista() :  longitud_(0), head(NULL), last(NULL) {}
+Lista::Lista() :  longitud_(0), head(nullptr), last(nullptr) {}
 
-Lista::Nodo::Nodo(const int &elem) : data(elem), next(NULL), back(NULL) {}
+Lista::Nodo::Nodo(const int &elem) : data(elem), next(nullptr), back(nullptr) {}
 
 Lista::Lista(const Lista& l) : Lista() {
     //Inicializa una lista vacía y luego utiliza operator= para no duplicar el código de la copia de una lista.
@@ -17,7 +17,7 @@ Lista::~Lista() {
 }
 
 Lista& Lista::operator=(const Lista& aCopiar) {
-    if (aCopiar.head != NULL){
+    if (aCopiar.head){
         for (int i = aCopiar.longitud()-1; i >= 0 ; --i) {
             this->agregarAdelante(aCopiar.iesimo(i));
         }
@@ -32,86 +32,47 @@ Lista& Lista::operator=(const Lista& aCopiar) {
 
 void Lista::agregarAdelante(const int& elem) {
     Nodo* n = new Nodo(elem);
-    if (this->head != NULL){
-        n->next = this->head;
-        head->back = n;
-        this->head = n;
-    } else {
+    if (longitud_ == 0){
         head = n;
-    }
-    if (this->last != NULL){
-        Nodo* m = head;
-        while(m->next != NULL){
-            m = m->next;
-        }
-        if (m != last){ // uno lo ultimo del head con lo primero del last
-            Nodo* d = last;
-            while(d->back != NULL){
-                d = d->back;
-            }
-            m->next = d;
-            d->back = m;
-        }
+        last = head;
+    } else {
+        n->next = head;
+        head->back = n;
+        head = n;
     }
     longitud_++;
 }
 
 void Lista::agregarAtras(const int& elem) {
     Nodo* n = new Nodo(elem);
-    if (this->last != NULL){
-        n->back = this->last;
-        last->next = n;
-        this->last = n;
+    if (longitud_ == 0){
+        last = n;
+        head = last;
     } else {
+        n->back = last;
+        last->next = n;
         last = n;
     }
     longitud_++;
 }
 
-void Lista::eliminar(Nat i) {
-    if (this->head != NULL) {
-        Nodo* m = head;
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        if (m->back == NULL){
-            if (m->next == NULL) {
-                head = m;
-            } else {
-                (m->next)->back = m->back;
-                head = m->next;
-            }
-        } else if (m->next == NULL) {
-            (m->back)->next = m->next;
-        } else {
-            (m->back)->next = m->next;
-            (m->next)->back = m->back;
-        }
-        delete m;
+void Lista::eliminar(Nat i){
+    Nodo* m = head;
+    for (int n = 0; n < i; n++) {
+        m = m->next;
+    }
+    if (m->back){
+        (m->back)->next = m->next;
     } else {
-        Nodo* m = last;
-        for (int j = 0; j < longitud_-1; j++){
-            m = m->back;
-        }
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        if (m->back == NULL){
-            if (m->next == NULL){
-                last = m;
-            } else {
-                (m->next)->back = m->back;
-            }
-        } else if (m->next == NULL) {
-            (m->back)->next = m->next;
-            last = m->back;
-        } else {
-            (m->back)->next = m->next;
-            (m->next)->back = m->back;
-        }
-        delete m;
+        head = m->next;
+    }
+    if (m->next){
+        (m->next)->back = m->back;
+    } else {
+        last = m->back;
     }
     longitud_--;
+    delete m;
 }
 
 int Lista::longitud() const {
@@ -119,41 +80,19 @@ int Lista::longitud() const {
 }
 
 const int& Lista::iesimo(Nat i) const {
-    if (this->head != NULL) {
-        Nodo *m = head;
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        return m->data;
-    } else {
-        Nodo *m = last;
-        for (int j = 0; j < longitud_-1; j++){
-            m = m->back;
-        }
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        return m->data;
+    Nodo* m = head;
+    for (int n = 0; n < i; n++) {
+        m = m->next;
     }
+    return m->data;
 }
 
 int& Lista::iesimo(Nat i) {
-    if (this->head != NULL) {
-        Nodo *m = head;
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        return m->data;
-    } else {
-        Nodo *m = last;
-        for (int j = 0; j < longitud_-1; j++){
-            m = m->back;
-        }
-        for (int n = 0; n < i; n++) {
-            m = m->next;
-        }
-        return m->data;
+    Nodo* m = head;
+    for (int n = 0; n < i; n++) {
+        m = m->next;
     }
+    return m->data;
 }
 
 void Lista::mostrar(ostream& o) {

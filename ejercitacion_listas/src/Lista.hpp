@@ -1,6 +1,6 @@
 #include "Lista.h"
 
-Lista::Lista() :  longitud_(0), head(nullptr), last(nullptr) {}
+Lista::Lista() : longitud_(0), head(nullptr), last(nullptr) {}
 
 Lista::Nodo::Nodo(const int &elem) : data(elem), next(nullptr), back(nullptr) {}
 

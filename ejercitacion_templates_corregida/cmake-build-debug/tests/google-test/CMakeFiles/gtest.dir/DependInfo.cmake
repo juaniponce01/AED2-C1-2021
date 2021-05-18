@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/tests/google-test/src/gtest-all.cc" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/google-test/src/gtest-all.cc" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

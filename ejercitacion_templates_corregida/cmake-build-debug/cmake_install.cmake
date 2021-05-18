@@ -1,8 +1,8 @@
-# Install script for directory: /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida
+# Install script for directory: C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/solucion")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/cmake_install.cmake")
+  include("C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

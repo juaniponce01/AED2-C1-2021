@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_diccionario.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_diccionario.cpp.o"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_multiconjunto.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_multiconjunto.cpp.o"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_templates.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_templates.cpp.o"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_diccionario.cpp" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_diccionario.cpp.obj"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_multiconjunto.cpp" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_multiconjunto.cpp.obj"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_templates.cpp" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir/tests/test_templates.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
@@ -22,8 +22,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

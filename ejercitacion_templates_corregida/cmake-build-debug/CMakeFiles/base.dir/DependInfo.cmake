@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_base.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/base.dir/tests/test_base.cpp.o"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_base.cpp" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/base.dir/tests/test_base.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
@@ -15,8 +15,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

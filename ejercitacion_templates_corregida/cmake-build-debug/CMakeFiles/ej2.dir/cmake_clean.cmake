@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ej2.dir/tests/test_templates.cpp.o"
-  "ej2"
+  "CMakeFiles/ej2.dir/tests/test_templates.cpp.obj"
+  "ej2.exe"
+  "ej2.exe.manifest"
   "ej2.pdb"
+  "libej2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

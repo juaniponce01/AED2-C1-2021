@@ -1,24 +1,24 @@
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install/strip.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install/local.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/list_install_components.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej1.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej6.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej2.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej7.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej5.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej4.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej3.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej9.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/base.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install/local.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/list_install_components.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/rebuild_cache.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/edit_cache.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install/strip.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/base.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej6.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej1.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej2.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej3.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej4.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej5.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej7.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej8.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/ej9.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/CMakeFiles/install/strip.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/list_install_components.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/gtest_main.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install/local.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/edit_cache.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/rebuild_cache.dir
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/cmake-build-debug/tests/google-test/CMakeFiles/install/strip.dir

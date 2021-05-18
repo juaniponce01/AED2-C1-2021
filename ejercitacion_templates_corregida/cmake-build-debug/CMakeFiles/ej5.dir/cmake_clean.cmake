@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ej5.dir/tests/test_diccionario.cpp.o"
-  "CMakeFiles/ej5.dir/tests/test_templates.cpp.o"
-  "ej5"
+  "CMakeFiles/ej5.dir/tests/test_diccionario.cpp.obj"
+  "CMakeFiles/ej5.dir/tests/test_templates.cpp.obj"
+  "ej5.exe"
+  "ej5.exe.manifest"
   "ej5.pdb"
+  "libej5.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -47,6 +47,7 @@ TEST(Templates, esPrefijo) {
   EXPECT_TRUE(esPrefijo(vector<int>({1, 2}), vector<int>({1, 2, 3, 4})));
   EXPECT_FALSE(esPrefijo(vector<int>({0, 2}), vector<int>({1, 2, 3, 4})));
   EXPECT_FALSE(esPrefijo(vector<int>({0, 2, 5}), vector<int>({0, 2})));
+  EXPECT_FALSE(esPrefijo(vector<int>({0, 2, 5}), vector<int>({0, 3, 5})));
 }
 
 #endif

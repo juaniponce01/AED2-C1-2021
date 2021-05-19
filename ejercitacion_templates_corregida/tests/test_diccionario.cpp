@@ -29,7 +29,29 @@ TEST(diccionario, dicc_int_int) {
 
 #if EJ >= 6
 
-// Agregar un test para diccionario con clave string y valor bool.
+TEST(diccionario, dicc_string_bool) {
+    Diccionario<int, int> d;
+    ASSERT_FALSE(d.def('a'));
+    ASSERT_FALSE(d.def('b'));
+    ASSERT_FALSE(d.def('c'));
+    d.definir('a', true);
+    ASSERT_TRUE(d.def('a'));
+    ASSERT_FALSE(d.def('b'));
+    ASSERT_FALSE(d.def('c'));
+    ASSERT_EQ(d.obtener('a'), true);
+    d.definir('b', false);
+    ASSERT_TRUE(d.def('a'));
+    ASSERT_TRUE(d.def('b'));
+    ASSERT_FALSE(d.def('c'));
+    ASSERT_EQ(d.obtener('a'), true);
+    ASSERT_EQ(d.obtener('b'), false);
+    d.definir('a', false);
+    ASSERT_TRUE(d.def('a'));
+    ASSERT_TRUE(d.def('b'));
+    ASSERT_FALSE(d.def('c'));
+    ASSERT_EQ(d.obtener('a'), false);
+    ASSERT_EQ(d.obtener('b'), false);
+}
 
 #endif
 

@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -ggdb3 -g")
 add_subdirectory(tests/google-test)
 
 # Creamos el ejecutable para correr los tests
-add_executable(base tests/test_base.cpp)
+add_executable(base tests/test_base.cpp src/Multiconjunto.hpp src/Multiconjunto.h)
 add_executable(ej1 tests/test_templates.cpp)
 add_executable(ej2 tests/test_templates.cpp)
 add_executable(ej3 tests/test_templates.cpp)

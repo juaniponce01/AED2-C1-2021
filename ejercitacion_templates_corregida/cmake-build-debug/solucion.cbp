@@ -652,6 +652,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Multiconjunto.h">
+			<Option target="base"/>
+		</Unit>
+		<Unit filename="C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Multiconjunto.hpp">
+			<Option target="base"/>
+		</Unit>
 		<Unit filename="C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/google-test/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>

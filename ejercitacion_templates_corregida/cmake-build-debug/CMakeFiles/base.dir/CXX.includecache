@@ -278,15 +278,19 @@ cxxabi.h
 acxx_demangle.h
 -
 
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.cpp
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.h
+
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.hpp
 string
 -
+templates.h
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.h
 
 C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/test_base.cpp
 gtest/gtest.h
 C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/tests/gtest/gtest.h
-../src/Templates.cpp
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.cpp
+../src/Templates.hpp
+C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/ejercitacion_templates_corregida/src/Templates.hpp
 string
 -
 

@@ -23,6 +23,7 @@ CMakeFiles/base.dir/tests/test_base.cpp.obj: ../tests/google-test/include/gtest/
 CMakeFiles/base.dir/tests/test_base.cpp.obj: ../tests/google-test/include/gtest/internal/gtest-string.h
 CMakeFiles/base.dir/tests/test_base.cpp.obj: ../tests/google-test/include/gtest/internal/gtest-tuple.h
 CMakeFiles/base.dir/tests/test_base.cpp.obj: ../tests/google-test/include/gtest/internal/gtest-type-util.h
-CMakeFiles/base.dir/tests/test_base.cpp.obj: ../src/Templates.cpp
+CMakeFiles/base.dir/tests/test_base.cpp.obj: ../src/Templates.h
+CMakeFiles/base.dir/tests/test_base.cpp.obj: ../src/Templates.hpp
 CMakeFiles/base.dir/tests/test_base.cpp.obj: ../tests/test_base.cpp
 

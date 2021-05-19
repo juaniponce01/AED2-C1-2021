@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../src/Templates.cpp"
+#include "../src/Templates.hpp"
 #include <string>
 
 using namespace std;

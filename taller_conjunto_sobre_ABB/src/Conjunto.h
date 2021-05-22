@@ -46,20 +46,22 @@ class Conjunto
 
     private:
 
-        /**
-         * Completar con lo que sea necesario...
-         **/
+        int _longitud;
 
         struct Nodo
         {
             // El constructor, toma el elemento al que representa el nodo.
-            Nodo(const T& v);
+            Nodo(const T& v) : valor(v), izq(nullptr), der(nullptr), padre(nullptr) {};
             // El elemento al que representa el nodo.
             T valor;
             // Puntero a la raíz del subárbol izquierdo.
             Nodo* izq;
             // Puntero a la raíz del subárbol derecho.
-            Nodo* der; 
+            Nodo* der;
+            Nodo* padre;
+            bool esHoja(){
+                return  !izq && !der;
+            }
         };
 
         // Puntero a la raíz de nuestro árbol.

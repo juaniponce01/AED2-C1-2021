@@ -302,3 +302,65 @@ Interfaz:
 						res ← elemsEnRango(sinUno(c), l, u)
 					end if
 				end if
+---
+
+15) 
+Representación:
+	dicc(string, nat) se representa con secu(tupla⟨string, nat⟩)
+
+Invariante de Representación:
+	- los strings no deben repetirse
+---
+Función de abstracción:
+	Abs:	estr	->	dicc(str, nat)	{Rep(e)}
+	(∀e: estr) Abs(e) =obs d: dicc(str, nat) | (1)∧(2)
+		donde: 
+		(1) ≡ (∀ c: string)(definido?(c, d) ⇒L estaEnPrim?(c, s)
+		(1)	≡	(∀ c: string)(definido?(c, d) ⇒L obtener(c, d) = obtenerDeSecu(c, e))
+			donde:
+			estaEnPrim devuelve true si se encuentra la clave c en la primer posicion de alguna de las tuplas
+			obtenerDeSecu: string × secu(tupla⟨string, nat⟩) -> dicc(str, nat)
+			obtenerDeSecu(c, s) ≡ 
+			if π₁(prim(s)) = c then
+				π₂(prim(s))
+			else
+				obtenerDeSecu(c, fin(s))
+			fi
+---
+
+16) 
+Interfaz:		
+	Algoritmos del módulo:
+		ivacio() -> res: multiconj(α)
+			res ← Ø
+		---
+		iagregar(in a: α, in/out m: multiconj(α))
+			m ← Ag(α, m)
+		---
+		ieliminar(in a: α, in/out m: multiconj(α))
+			m ← m - {α}
+		---
+		i#repeticiones(in a: α, in m: multiconj(α)) -> res: nat
+			res ← #(α, m)
+---
+
+17)
+Representación:
+	secundario se representa con estr donde 
+		estr es tupla ⟨	
+										faltas:	dicc(alumno, nat),
+										notas: 	dicc(alumno, multiconj(nota)) 
+									⟩
+
+Invariante de Representación:
+	- claves(e.notas) = claves(e.faltas)
+	- cantidad de claves de cada multiconj debe ser la misma
+---
+Función de abstracción:
+	Abs:	estr	->	secundario	{Rep(e)}
+	(∀e: estr) Abs(e) =obs s: secundario | (1)∧(2)∧(3)
+		donde: 
+		(1)	≡	alumnos(s) = claves(e.faltas)
+		(2)	≡	(∀ a: alumno)(a ∈ alumnos(s) ⇒L #faltas(a, s) = obtener(a, e.faltas))
+		(3) ≡ (∀ a: alumno)(a ∈ alumnos(s) ⇒L notas(a, s) = obtener(a, e.notas))
+---

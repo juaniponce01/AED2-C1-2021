@@ -1,0 +1,83 @@
+TAD Sorteo
+	Igualdad Observacional:();
+	Géneros: sorteo
+	Exporta: sorteo, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		personas: sorteo -> multiconj(persona)
+		dineroRecaudado: sorteo -> dinero
+		ticketsVendidos: sorteo -> multiconj(tupla(persona, dinero, ticket))
+		// sorteoCerrado?: sorteo -> bool
+		// ganadores: sorteo s -> conj(persona) {sorteoCerrado?(s)}
+		tablaDelSorteo: sorteo s -> tabla
+		dineroDePremios: sorteo -> dinero
+		
+	Generadores:
+		iniciarSorteo: tabla -> sorteo //{claves(tabla) > 0}
+		comprarTicket: persona p × dinero d × ticket t × sorteo s -> sorteo {¬ludopata?(p) ∧ ¬sorteoCerrado?(s) ∧ def?(d, tablaDelSorteo(s)) ∧ long(t) = 6 ∧ elementosMenosQueN(t, 10)}
+		// cerrarSorteo: ticket × sorteo -> sorteo
+		
+	Otras Operaciones:
+		ticketGanador: sorteo -> ticket
+		
+	Axiomas:
+		personas(iniciarSorteo(tb)) ≡ Ø
+		personas(comprarTicket(p, d, t, s)) ≡ Ag(p, personas(s))
+		personas(cerrarSorteo(t, s)) ≡ personas(s)
+		
+		dineroRecaudado(iniciarSorteo(tb)) ≡ 0
+		dineroRecaudado(comprarTicket(p, d, t, s)) ≡ d + dineroRecaudado(s) 
+		dineroRecaudado(cerrarSorteo(t, s)) ≡ dineroRecaudado(s)
+		
+		ticketsVendidos(iniciarSorteo(tb)) ≡ Ø
+		ticketsVendidos(comprarTicket(p, d, t, s)) ≡ Ag((p, d, t), ticketsVendidos(s))
+		ticketsVendidos(cerrarSorteo(t, s)) ≡ ticketsVendidos(s)
+		
+		tablaDelSorteo(iniciarSorteo(tb)) ≡ tb
+		tablaDelSorteo(comprarTicket(p, d, t, s)) ≡ tablaDelSorteo(s)
+		tablaDelSorteo(cerrarSorteo(t, s)) ≡ tablaDelSorteo(s)
+		
+		dineroDePremios(iniciarSorteo()) ≡ 0
+		dineroDePremios(comprarTicket(p, d, t, s)) ≡ 
+		if π3(dameUno(ticketsVendidos(s))) = ticketGanador(s) then
+			obtener(π2(dameUno(ticketsVendidos(s))), tablaDelSorteo(s)) + dineroDePremios(s)
+		else
+			dineroDePremios(s)
+		fi
+		dineroDePremios(cerrarSorteo(s)) ≡ dineroDePremios(s)
+		
+		ticketGanador(cerrarSorteo(t, s)) ≡ t //{long(t) = 6 ∧ elementosMenosQueN(t, 10)}
+		
+		
+Fin TAD
+
+TAD Ticket es secu(nat)
+TAD Persona es string
+TAD Dinero es nat
+TAD Tabla es dicc(precio, premio)
+TAD Precio es nat
+TAD Premio es nat
+
+//TAD tabla es dicc(precio, premio)
+
+TAD Secuencia
+extension:
+	elementosMenosQueN:secu(Nat) x Nat -> Bool
+	elementosMenosQueN(sn, n) ≡ 
+	if vacía?(sn)
+	then
+		true
+	else
+		if prim(sn) < n
+		then
+			elementosMenosQueN(ult(sn), n)
+		else
+			false
+		fi
+	fi
+fin Tad
+
+
+//sorteo1 = comprarTicket("gabi", 500, [0,0,0,0,0,0], comprarTicket("mati", 3, [5,5,5,5,5,5], iniciarSorteo()) )
+//ticketsVendidos(sorteo1) = 

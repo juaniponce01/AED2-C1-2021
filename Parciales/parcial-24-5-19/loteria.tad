@@ -1,0 +1,42 @@
+TAD Loteria
+	Igualdad Observacional:();
+	Géneros: loteria
+	Exporta: loteria, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		balance: loteria -> nat
+		sorteos: loteria -> conj(sorteo)
+		
+		
+	Generadores:
+		inicio:  -> loteria
+		sumarSorteo: ticket × sorteo s × loteria -> loteria {sorteoCerrado?(s)}
+		
+	Otras Operaciones:
+		cantDeApuestas: persona × loteria -> nat
+		ludopata?: persona × loteria -> bool
+		esBalancePositivo?: loteria -> bool
+		dineroDePremios: sorteo -> nat
+		
+	Axiomas:
+		balance(inicio()) ≡ 0
+		balance(sumarSorteo(ti, s, l)) ≡ (dineroRecaudado(s) - dineroDePremios(s)) + balance(l)
+	
+		dineroDePremios(s) ≡
+		if Ø then
+			0
+		else
+			if π3(dameUno(ticketsVendidos(s))) = ti then
+				obtener(π2(dameUno(ticketsVendidos(s))), tb) 
+				//tabla = dicc("$precio", "$premio")
+			else
+				sino
+			fi
+		fi
+	
+		esBalancePositivo?(l) ≡ balance(l) > 0
+	
+		cantDeApuestas(p, l) ≡ #(p, dameUno(sorteos(l))) + cantDeApuestas(p, sinUno(l))
+		ludopata?(p, l) ≡ cantDeApuestas(p) > 50 ∧ #sorteos(l) ≤ 100
+Fin TAD

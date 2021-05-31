@@ -1,0 +1,91 @@
+TAD CentroGestionTramites
+	Igualdad Observacional:();
+	Géneros: cgt
+	Exporta: cgt, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		ventanillas: cgt -> conj(ventanilla)
+		colaEnVentanilla: cgt × ventanilla v -> secu(ticket) {v ∈ ventanillas(cgt)}
+		ventanillasDelTicket: cgt × ticket -> secu(ventanilla) {se debe encontrar el ticket en alguna de las colas, osea debe existir el ticket}
+		cantPersonasAtendidasEn: cgt × ventanilla -> nat 
+	Generadores:
+		inicioCGT: conj(ventanilla) -> cgt
+		llegaPersona: cgt × secu(ventanilla) sv × ticket -> cgt {ventanillasValidas(cgt, sv) ∧ noHayRepetidos(sv)}
+		personaAtendida: cgt × ticket -> cgt
+	Otras Operaciones:
+		ventanillasValidas: secu(ventanilla) -> bool
+		noHayRepetidos: secu(ventanilla) -> bool
+		ventanillaConMasAtendidos: cgt × conj(ventanilla) cv -> ventanilla {cv ∩ ventanillas(cgt) = cv}
+	Axiomas:
+		ventanillas(inicioCGT(cv)) ≡ cv
+		ventanillas(llegaPersona(cgt, sv, t)) ≡ ventanillas(cgt)
+		ventanillas(personaAtendida(cgt, t)) ≡ ventanillas(cgt)
+		
+		colaEnVentanilla(inicioCGT(cv), v) ≡ <>
+		colaEnVentanilla(llegaPersona(cgt, sv, t), v) ≡ 
+		if prim(sv) = v then
+			colaEnVentanilla(cgt, v) ◦ t
+		else
+			colaEnVentanilla(cgt, v)
+		fi
+		colaEnVentanilla(personaAtendida(cgt, t), v) ≡ 
+		if prim(ventanillasDelTicket(cgt, t)) = v then
+			fin(colaEnVentanilla(cgt, v))
+		else
+			colaEnVentanilla(cgt, v)
+		fi
+		
+		ventanillasDelTicket(inicioCGT(cv), t) ≡ <>
+		ventanillasDelTicket(llegaPersona(cgt, sv, t), t') ≡ 
+		if t = t' then
+			sv
+		else
+			ventanillasDelTicket(cgt, t')
+		fi
+		ventanillasDelTicket(personaAtendida(cgt, t), t') ≡ 
+		if t = t' then
+			fin(ventanillasDelTicket(cgt, t))
+		else
+			ventanillasDelTicket(cgt, t')
+		fi
+		
+		cantPersonasAtendidasEn(inicioCGT(cv), v) ≡ 0
+		cantPersonasAtendidasEn(llegaPersona(cgt, sv, t), v) ≡ cantPersonasAtendidasEn(cgt, v)
+		cantPersonasAtendidasEn(personaAtendida(cgt, t), v) ≡ 
+		if prim(ventanillasDelTicket(cgt, t)) = v then
+			1 + cantPersonasAtendidasEn(cgt, v)
+		else
+			cantPersonasAtendidasEn(cgt, v)
+		fi
+		
+		ventanillaConMasAtendidos(cgt, cv) ≡ maximaVentanilla(cgt, dameUno(cv), sinUno(cv))
+		
+		maximaVentanilla(cgt, v, cv) ≡ 
+		if vacía?(cv) then
+			v
+		else
+			if cantPersonasAtendidasEn(cgt, v) ≤ cantPersonasAtendidasEn(cgt, dameUno(cv)) then
+				maximaVentanilla(cgt, dameUno(cv), sinUno(cv))
+			else
+				maximaVentanilla(cgt, v, sinUno(cv))
+			fi
+		fi
+		
+		ventanillasValidas(cgt, sv) ≡ 
+		if vacía?(sv) then
+			true
+		else
+			if prim(sv) ∈ ventanillas(cgt) then
+				ventanillasValidas(cgt, fin(sv))
+			else
+				false
+			fi
+		fi
+		
+		noHayRepetidos(sv) ≡ 
+		
+Fin TAD
+
+TAD Ventanilla es secu(nat)
+TAD Ticket es nat

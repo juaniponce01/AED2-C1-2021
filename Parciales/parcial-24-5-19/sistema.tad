@@ -1,0 +1,67 @@
+TAD sistema
+    Igualdad Observacional:();
+    Géneros: sistema
+    Exporta: sistema, observadores, generadores, balancePositivo
+    Usa: Bool, Nat
+
+    Observadores Básicos:
+        ticket?: sistema x sec(cliente) -> sec(ticket)
+        precio?: sistema x ticket -> nat
+        premio?: sistema x ticket -> nat
+    Generadores:
+        iniciarSistema: sistema -> sistema
+    Otras Operaciones:
+        crearCombinacionGanadora: sistema x sec(ticket) -> nat n {n < 1000000}
+        seleccionarGanadores: sistema x sec(cliente) x n -> sec(cliente)
+        balancePositivo: sistema x sec(cliente) -> Bool
+    Axiomas:
+        ticket?(iniciarSistema(s), sc) ≡ ticket?(s, sc)
+        precio?(iniciarSistema(s), t) ≡ precio?(s, t)
+        premio?(iniciarSistema(s), t) ≡ premio?(s, t)
+
+        seleccionarGanadores(s, sc, n) ≡ 
+        if vacía?(sc) then
+            <>
+        else
+            if prim(ticket?(sc)) = n
+            then
+                prim(sc) • seleccionarGanadores(s, ult(sc), n)
+            else
+                seleccionarGanadores(s, ult(sc), n)
+            fi
+        fi
+
+        sumarCompras(sc) ≡ 
+        if vacía?(sc)
+        then
+            0
+        else
+            precio?(prim(sc)) + sumarCompras(ult(sc))
+        fi
+
+        SumarPremios(sc) ≡ 
+        if vacía?(sc)
+        then
+            0
+        else
+            premio?(prim(sc)) + SumarPremios(ult(sc))
+        fi
+
+        balancePositivo(s, sc) ≡ (sumarCompras(sc) - SumarPremios(sc)) > 0
+Fin TAD
+
+TAD Cliente
+    Igualdad Observacional:();
+    Géneros: nombreTad
+    Exporta: nombreTad, observadores, generadores, 
+    Usa: Bool, Nat
+
+    Observadores Básicos:
+        comprasDeLosUltimosCienDias?: cliente c -> Nat
+    Generadores:
+        compraTicket: sistema x cliente c x conj(nat) -> conj(ticket) {¬(esLudopata?(c))}
+    Otras Operaciones:
+        esLudopata: cliente -> Bool
+    Axiomas:
+        esLudopata(c) ≡ comprasDeLosUltimosCienDias(c) > 50
+Fin TAD

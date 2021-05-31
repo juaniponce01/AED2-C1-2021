@@ -1,0 +1,105 @@
+TAD TecnicosADomicilio
+	Igualdad Observacional:();
+	Géneros: TaD
+	Exporta: TaD, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		tecnicos: TaD -> conj(tecnico)
+		tecnicosDisponibles: TaD -> conj(tecnico)
+		domiciliosPendientes: TaD -> sec(direccion)
+		direccionActual: tecnico t × TaD td -> direccion 
+		direccionesVisitadasPor: tecnico t × TaD td -> secu(direccion)
+		tecnicosQueVisitaron: direccion d × TaD td -> multiconj(tecnico) {¬(d = direccionCentral(td))}
+		
+	Generadores:
+		iniciarTaD: direccion × conj(tecnico) -> TaD
+		enviarTecnico: tecnico t × TaD td -> TaD {t ∈ tecnicosDisponibles(td) ∧ ¬(vacía?(domiciliosPendientes(td)))}
+		agregarPedido: direccion d × TaD td -> TaD {d ∉ domiciliosPendientes(td)}
+		trabajoTerminado: tecnico × TaD -> TaD
+		
+	Otras Operaciones:
+		eliminarDireccion: direccion × secu(direccion) -> secu(direccion)
+		tecnicosOcupados: TaD -> conj(tecnico) 
+		direccionMasCercana: direccion d × secu(direccion) sd -> direccion {¬(vacía?(sd))}
+		cantVecesQuePasoPorDireccion: tecnico × direccion × TaD -> nat
+		
+	Axiomas:
+		tecnicos(iniciarTaD(d, ct)) ≡ ct
+		tecnicos(enviarTecnico(t, td)) ≡ tecnicos(td)
+		tecnicos(agregarPedido(d, td)) ≡ tecnicos(td)
+		tecnicos(trabajoTerminado(t, td)) ≡ tecnicos(td)
+		
+		tecnicosDisponibles(iniciarTaD(d, ct)) ≡ ct
+		tecnicosDisponibles(enviarTecnico(t, td)) ≡ tecnicosDisponibles(td) - {t}
+		tecnicosDisponibles(agregarPedido(d, td)) ≡ tecnicosDisponibles(td)
+		tecnicosDisponibles(trabajoTerminado(t, td)) ≡ Ag(t, tecnicosDisponibles(td))
+		
+		domiciliosPendientes(iniciarTaD(d, ct)) ≡ <>
+		domiciliosPendientes(enviarTecnico(t, td)) ≡ eliminarDireccion(direccionMasCercana(direccionActual(t), domiciliosPendientes(td)))
+		domiciliosPendientes(agregarPedido(d, td)) ≡ domiciliosPendientes(td) ◦ d
+		domiciliosPendientes(trabajoTerminado(t, td)) ≡ eliminarDireccion(direccionActual(t), domiciliosPendientes(td))
+		
+		direccionActual(t, iniciarTaD(d, ct)) ≡ d
+		direccionActual(t, enviarTecnico(t, td)) ≡ direccionMasCercana(prim(direccionesVisitadasPor(t, td)), domiciliosPendientes(td))
+		direccionActual(t, agregarPedido(d, td)) ≡ direccionActual(t, td)
+		direccionActual(t, trabajoTerminado(t, td)) ≡ prim(direccionesVisitadasPor(t))
+		
+		direccionesVisitadasPor(t, iniciarTaD(d, ct)) ≡ d • <>
+		direccionesVisitadasPor(t, enviarTecnico(t, td)) ≡ direccionMasCercana(direccionActual(t, td), domiciliosPendientes(td)) • direccionesVisitadasPor(t, td)
+		direccionesVisitadasPor(t, agregarPedido(d, td)) ≡ direccionesVisitadasPor(td)
+		direccionesVisitadasPor(t, trabajoTerminado(t, td)) ≡ direccionesVisitadasPor(td)
+		
+		tecnicosQueVisitaron(d, iniciarTaD(d', ct)) ≡ Ø
+		tecnicosQueVisitaron(d, enviarTecnico(t, td)) ≡ 
+		if esta?(d, direccionesVisitadasPor(t, td)) then
+			Ag(t, tecnicosQueVisitaron(d, td))
+		else
+			sino
+		fi
+		tecnicosQueVisitaron(d, )
+		tecnicosQueVisitaron(d, )
+		
+		
+		cantVecesQuePasoPorDireccion(t, d, td) ≡ 
+		if vacía?(direccionesVisitadasPor(t, td)) then
+			0
+		else
+			if prim(direccionesVisitadasPor(t, td)) = d then
+				1 + dire
+			else
+				sino
+			fi
+		fi
+		
+		
+		
+		direccionActual(t, td) ≡ prim(direccionesVisitadasPor(t, td))
+		
+		direccionMasCercana(d, sd) ≡ distanciaMinima(d, prim(sd), fin(sd))
+	
+		distanciaMinima(d, d1, sd) ≡ 
+		if vacía?(sd) then
+			d1
+		else
+			if dist(d, prim(sd)) < dist(d, d1) then
+				distanciaMinima(d, prim(sd), fin(sd))
+			else
+				distanciaMinima(d, d1, fin(sd))
+			fi
+		fi
+	
+		eliminarDireccion(d, sd) ≡ 
+		if vacía?(sd) then
+			<>
+		else
+			if prim(sd) = d then
+				fin(sd)
+			else
+				prim(sd) • eliminarDireccion(fin(sd))
+			fi
+		fi
+Fin TAD
+
+TAD Direccion es geolocalizacion
+TAD Tecnico es string

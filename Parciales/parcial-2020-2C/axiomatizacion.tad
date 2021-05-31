@@ -1,0 +1,54 @@
+	1. diccToMulticonj: dicc(α, nat) -> multiconj(α)
+	diccToMulticonj(d) ≡ 
+	if Ø?(claves(d)) then
+		Ø
+	else
+		if #(dameUno(claves(d)), diccToMulticonj(d)) < obtener(dameUno(claves(d)) then
+			Ag(dameUno(claves(d)), diccToMulticonj(d))
+		else
+			diccToMulticonj(borrar(dameUno(claves((d))), d))
+		fi
+	fi 
+	
+	definir(x, 2, definir(y, 3, definir(z, 1, vacio)))
+	{ x : 2
+	  y : 3
+	  z : 1 }
+	
+	
+	2. obtenerSecusValidas: dicc(α, nat) × conj(secu(α)) -> conj(secu(α))
+	obtenerSecusValidas(d, cs) ≡
+	if Ø?(cs) then
+		Ø
+	else
+		if esSecuenciaValida(dameUno(cs), diccToMulticonj(d)) then
+			Ag(dameUno(cs), obtenerSecusValidas(d, sinUno(cs)))
+		else
+			obtenerSecusValidas(d, sinUno(cs))
+		fi
+	fi
+	
+	esSecuenciaValida: secu(α) × multiconj(α) -> bool
+	esSecuenciaValida(s, mc) ≡ 
+	if vacía?(s) then
+		true
+	else
+		if cantElementos(prim(s), s) ≤ #(prim(s), mc) then
+			esSecuenciaValida(fin(s), mc)
+		else
+			false
+		fi
+	fi
+	
+	cantElementos: α × secu(α) -> nat
+	cantElementos(e, s) ≡ 
+	if vacía?(s) then
+		0
+	else
+		if e = prim(s) then 1 + cantElementos(e, fin(s)) else cantElementos(e, fin(s)) fi
+	fi
+	
+	
+	
+	
+	

@@ -1,0 +1,144 @@
+TAD TierraDeAlgo2
+	Igualdad Observacional: (∀ td, td': tad)(td =obs td' ⇐⇒ (ciudades(td) =obs ciudades(td') ∧ 
+																													 noVacunados(td) =obs noVacunados(td')
+																													 yaVacunados(td) =obs yaVacunados(td')
+																													 ciudadDeInscripto(td, p) =obs ciudadDeInscripto(td', p) 
+																													 #dosis(td, c) =obs #dosis(td', c)
+																													 #vacunadosEn(td, c) =obs #vacunadosEn(td', c) ) 
+	Géneros: tad
+	Exporta: tad, observadores, generadores, ciudadQueMasVacuno, ciudadConMasVacunas
+	Usa: Bool, Nat, conj(persona), conj(ciudad), persona, ciudad, cantidad
+	
+	Observadores Básicos:
+		ciudades: tad -> conj(ciudad)
+		noVacunados: tad -> conj(persona)
+		yaVacunados: tad -> conj(persona)
+		ciudadDeInscripto: tad td × persona p -> ciudad {p ∈ (noVacunados(td) ∪ yaVacunados(td))}
+		#dosis: tad × ciudad -> cantidad
+		#vacunadosEn: tad × ciudad -> nat
+	Generadores:
+		iniciarTAD: conj(ciudad) cc -> tad {¬(Ø?(cc))}
+		llegaPlanilla: conj(persona) × ciudad × tad td -> tad {((cp ∩ yaVacunados(tad)) = Ø) ∧ c ∈ ciudades(td)}
+		// Asumo que la planilla de un centro tiene personas solo de esa ciudad
+		lleganDosis: cantidad n × ciudad c × tad td -> tad {mod(n, 5) = 0 ∧ c ∈ ciudades(td)}
+		// Asumo que las dosis solo llegan de a 5 (5 por frasco)
+		
+	Otras Operaciones:
+		mod: nat × nat -> nat
+		ciudadQueMasVacuno: tad -> ciudad
+		ciudadConMasVacunas: tad -> ciudad
+		mayorCantVacunados: ciudad × conj(ciudad) × tad -> ciudad
+		mayorCantVacunas: ciudad × conj(ciudad) × tad -> ciudad
+	Axiomas: ∀ cc, conj(ciudad), ∀ c, c': ciudad, ∀ cp: conj(persona), ∀ td: tad, ∀ n, n': cantidad, ∀ p: persona 
+		ciudades(iniciarTAD(cc)) ≡ cc
+		ciudades(llegaPlanilla(cp, c, td)) ≡ ciudades(td)
+		ciudades(lleganDosis(n, c, td)) ≡ ciudades(td)
+		
+		noVacunados(iniciarTAD(cc)) ≡ Ø
+		noVacunados(llegaPlanilla(cp, c, td)) ≡ 
+		if 0 < #dosis(td, c) then
+			if Ø?(cp) then
+				noVacunados(td)
+			else
+				noVacunados(llegaPlanilla(sinUno(cp), c, td))
+			fi
+		else
+			cp ∪ noVacunados(td)
+		fi
+		noVacunados(lleganDosis(n, c, td)) ≡ noVacunados(td)
+		
+		yaVacunados(iniciarTAD(cc)) ≡ Ø
+		yaVacunados(llegaPlanilla(cp, c, td)) ≡ 
+		if 0 < #dosis(td, c) then
+			if Ø?(cp) then
+				yaVacunados(td)
+			else
+				Ag(dameUno(cp), yaVacunados(llegaPlanilla(sinUno(cp), c, td)))
+			fi
+		else
+			yaVacunados(td)
+		fi
+		yaVacunados(lleganDosis(n, c, td)) ≡ yaVacunados(td)
+		
+		ciudadDeInscripto(llegaPlanilla(cp, c, td), p) ≡ if p ∈ cp then c else ciudadDeInscripto(td, p) fi
+		ciudadDeInscripto(lleganDosis(n, c, td), p) ≡ ciudadDeInscripto(td, p)
+		
+		#dosis(iniciarTAD(cc), c) ≡ 0
+		#dosis(llegaPlanilla(cp, c', td), c) ≡ 
+		if c = c' then
+			if Ø?(noVacunados(llegaPlanilla(cp, c', td))) then
+				#dosis(td, c)
+			else
+				if 0 < #dosis(td, c) then
+					#dosis(llegaPlanilla(sinUno(cp), c', td), c) - 1
+				else
+					#dosis(td, c)
+				fi
+			fi
+		else
+			#dosis(td, c)
+		fi
+		#dosis(lleganDosis(n, c', td), c) ≡ 
+		if c = c' then
+			n + #dosis(td, c)
+		else
+			#dosis(td, c)
+		fi
+		
+		vacunadosEn(iniciarTAD(cc), c) ≡ 0
+		vacunadosEn(llegaPlanilla(cp, c', td), c) ≡ 
+		if c = c' then
+			if 0 < #dosis(td, c) then
+				if Ø?(cp) then
+					vacunadosEn(td, c)
+				else
+					1 + vacunadosEn(llegaPlanilla(sinUno(cp), c', td), c)
+				fi
+			else
+				vacunadosEn(td, c)
+			fi
+		else
+			vacunadosEn(td, c)
+		fi
+		vacunadosEn(lleganDosis(n, c, td), c) ≡ vacunadosEn(td, c)
+		
+		
+		mod(n, n') ≡ 
+		if n < n' then
+			n
+		else
+			mod(n' - n, n')
+		fi
+		
+		ciudadQueMasVacuno(td) ≡ mayorCantVacunados(dameUno(ciudades(td)), sinUno(ciudades(td)), td)
+		
+		mayorCantVacunados(c, cc, td) ≡ 
+		if Ø?(cc) then
+			c
+		else
+			if vacunadosEn(td, c) < vacunadosEn(td, dameUno(cc)) then
+				mayorCantVacunados(dameUno(cc), sinUno(cc), td)
+			else
+				mayorCantVacunados(c, sinUno(cc), td)
+			fi
+		fi
+		
+		ciudadConMasVacunas(td) ≡ mayorCantVacunas(dameUno(ciudades(td)), sinUno(ciudades(td)), td)
+		
+		mayorCantVacunas(c, cc, td) ≡ 
+		if Ø?(cc) then
+			c
+		else
+			if #dosis(td, c) < #dosis(td, dameUno(cc)) then
+				mayorCantVacunas(dameUno(cc), sinUno(cc), td)
+			else
+				mayorCantVacunas(c, sinUno(cc), td)
+			fi
+		fi
+		
+		
+Fin TAD
+
+TAD Persona es string
+TAD ciudad es string
+TAD Cantidad es nat

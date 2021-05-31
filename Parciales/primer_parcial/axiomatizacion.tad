@@ -1,0 +1,81 @@
+TAD SecuenciaComprimida(α)
+	Otras Operaciones:
+		comprimir: secu(α) -> secuComp(α)
+		maxApsContiguas: secuComp(α) s -> α {¬(vacía?(s))}
+		longComprimida: secuComp(α) -> nat
+		cantElemIguales: α × secu(α) -> nat
+		proximoElemento: α × secu(α) -> secu(α)
+		sumaDeTuplasContiguas: tupla(α, nat) × secuComp(α) -> secuComp(α) 
+		juntarTuplas: tupla(α, nat) × tupla(α, nat) -> tupla(α, nat)
+		naturalMasGrande: secuComp(α) -> α
+		maximoDeLaSecuencia: tupla(α, nat) × secuComp(α) -> α
+		cantDeTuplas: secuComp(α) -> nat
+		
+	Axiomas: ∀ sc: secuComp(α), ∀ s: secu(α), ∀ t, t': tupla(α, nat)
+		
+		prim(e • s) ≡ e
+		fin(e • s) ≡ s
+		
+		comprimir(s) ≡ 
+		if vacía?(s) then
+			<>
+		else
+			//Aclaracion: Uso parentesis para generar tupla
+			(prim(s), cantElemIguales(prim(s), s)) • comprimir(proximoElemento(prim(s), fin(s))) 
+		fi
+		
+		cantElemIguales(α, s) ≡ 
+		if vacía?(s) then
+			0
+		else
+			if α = prim(s) then
+				1 + cantElemIguales(α, fin(s)) 
+			else
+				0
+			fi
+		fi
+		
+		proximoElemento(α, s) ≡ 
+		if vacía?(s) then
+			<>
+		else
+			if α = prim(s) then
+				proximoElemento(α, fin(s))
+			else
+				s
+			fi
+		fi
+		
+		maxApsContiguas(sc) ≡ naturalMasGrande(sumaDeTuplasContiguas(prim(sc), fin(sc)))
+		
+		sumaDeTuplasContiguas(t, sc) ≡ 
+		if vacía?(sc) then
+			t • <>
+		else
+			if π1(t) = π1(prim(sc)) then
+				sumaDeTuplasContiguas(juntarTuplas(t, prim(sc)), fin(sc))
+			else
+				t • sumaDeTuplasContiguas(prim(sc), fin(sc))
+			fi
+		fi
+		
+		juntarTuplas(t, t') ≡ (π1(t), π2(t) + π2(t'))
+		
+		naturalMasGrande(sc) ≡ maximoDeLaSecuencia(prim(sc), fin(sc))
+		
+		maximoDeLaSecuencia(t, sc) ≡ 
+		if vacía?(sc) then
+			π1(t)
+		else
+			if π2(t) < π2(prim(sc)) then
+				maximoDeLaSecuencia(prim(sc), fin(sc))
+			else
+				maximoDeLaSecuencia(t, fin(sc))
+			fi
+		fi
+		
+		longComprimida(sc) ≡ cantDeTuplas(sumaDeTuplasContiguas(sc))
+		
+		cantDeTuplas(sc) ≡ if vacía?(sc) then 0 else 1 + cantDeTuplas(fin(sc)) fi
+		
+Fin TAD

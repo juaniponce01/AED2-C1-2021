@@ -1,0 +1,94 @@
+TAD Sistema Caballito Futbol
+	Igualdad Observacional:();
+	Géneros: scf
+	Exporta: scf, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		canchas: scf -> conj(cancha)
+		canchasOcupadas: scf -> conj(cancha)
+		personasJugando: scf -> conj(persona)
+		personasEnEspera: scf -> secu(persona)
+		personasQueJugaron: scf -> conj(persona)
+		asistencias: persona p × scf -> nat {p ∈ personasQueJugaron(s)}
+		
+	Generadores:
+		crearCanchas: conj(cancha) -> scf
+		entraGrupo: conj(persona) cp × scf s -> scf {cp ∩ personasJugando(s) = Ø}
+		liberarCancha: cancha c × scf -> scf  {c ∈ canchasOcupadas(s)}
+		 
+	Otras Operaciones:
+		hayCanchasLibres: scf -> bool
+		asignarCanchaLibre: conj(cancha) × conj(cancha) -> conj(cancha)  {}
+		agregarUnGrupo: secu(persona) × conj(persona) × nat -> conj(persona)
+		sacarUnGrupo: conj(persona) × nat -> conj(persona)
+	
+	Axiomas:
+		canchas(crearCanchas(cc)) ≡ cc
+		canchas(entraGrupo(cp, s)) ≡ canchas(s)
+		canchas(liberarCancha(c, s)) ≡ canchas(s)
+		
+		canchasOcupadas(crearCanchas(cc)) ≡ 0
+		canchasOcupadas(entraGrupo(cp, s)) ≡ 
+		if #(canchasOcupadas(s)) < #(canchas(s)) then
+			if #(personasEnEspera(s)) + #(cp) < 10 then
+				canchasOcupadas(s)
+			else
+				asignarCanchaLibre(canchas(s), canchasOcupadas(s))
+			fi
+		else
+			canchas(s)
+		fi
+		canchasOcupadas(liberarCancha(c, s)) ≡ canchasOcupadas(s) - {c}
+		
+		personasJugando(crearCanchas(cc)) ≡ Ø
+		personasJugando(entraGrupo(cp, s)) ≡ 
+		if #(canchasOcupadas(s)) < #(canchas(s)) then
+			if long(personasEnEspera(entraGrupo(cp, s))) < 10 then
+				personasJugando(s)
+			else
+				agregarUnGrupo(personasEnEspera(entraGrupo(cp, s)), personasJugando(s), 10)
+			fi
+		else
+			personasJugando(s)
+		fi	
+		personasJugando(liberarCancha(c, s)) ≡ sacarUnGrupo(personasJugando(s), 10)
+		
+		personasEnEspera(crearCanchas(cc)) ≡ <>
+		personasEnEspera(entraGrupo(cp, s)) ≡ personasEnEspera(s) & cp 
+		personasEnEspera(liberarCancha(c, s)) ≡ personasEnEspera(s)
+		
+		hayCanchasLibres?(s) ≡ #(canchasOcupadas(s)) < #(canchas(s))
+		
+		asignarCanchaLibre(cc, co) ≡ 
+		if dameUno(cc) ∈ co then
+			asignarCanchaLibre(sinUno(cc), co)
+		else
+			Ag(dameUno(cc), co)
+		fi
+		
+		agregarUnGrupo(sp, cp, n) ≡ 
+		if n = 0 then
+			cp
+		else
+			agregarUnGrupo(fin(sp), Ag(prim(sp), cp), n - 1)
+		fi
+		
+		sacarUnGrupo(cp, n) ≡ 
+		if n = 0 then
+			cp
+		else
+			sacarUnGrupo(sinUno(cp), n - 1)
+		fi
+		
+		personasQueJugaron(crearCanchas(cc)) ≡ Ø
+		personasQueJugaron(entraGrupo(cp, s)) ≡ personasQueJugaron(s)
+		personasQueJugaron(liberarCancha(c, s)) ≡ Ag()
+		
+		asistencias(p, crearCanchas(cc)) ≡ 0
+		asistencias(p, entraGrupo(cp, s)) ≡ 
+		
+Fin TAD
+
+
+TAD Persona es nat

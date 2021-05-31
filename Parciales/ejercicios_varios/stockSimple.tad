@@ -1,0 +1,40 @@
+TAD StockSimple
+	Igualdad Observacional:();
+	Géneros: stock
+	Exporta: stock, observadores, generadores, 
+	Usa: Bool, Nat
+	
+	Observadores Básicos:
+		productosEnStock: stock -> conj(producto)
+		acciones: stock -> secu(tupla(producto, cantidad))
+	Generadores:
+		iniciarSistema: conj(producto) -> stock
+		comprarProducto: producto × cantidad × stock -> stock {c ≤ cantidadDelProducto(p, s)}
+		venderProducto: producto p × cantidad c × stock s -> stock {c ≤ cantidadDelProducto(p, s)}
+	Otras Operaciones:
+		cantidadDelProducto: producto × secu(tupla(producto, cantidad)) -> cantidad
+		
+	Axiomas: ∀ cp: conj(producto), ∀ p: producto, ∀ c: cantidad, ∀ s: stock
+		productosEnStock(iniciarSistema(cp)) ≡ cp
+		productosEnStock(comprarProducto(p, c, s)) ≡ Ag(p, productosEnStock(s))
+		productosEnStock(venderProducto(p, c, s)) ≡ productosEnStock(s) - {p}
+		
+		acciones(iniciarSistema(cp)) ≡ <>
+		acciones(comprarProducto(p, c, s)) ≡ (p, c) • acciones(s)
+		acciones(venderProducto(p, c, s)) ≡ (p, -c) • acciones(s)
+		
+		cantidadDelProducto(p, a) ≡ 
+		if vacia?(a) then
+			0
+		else
+			if π1(prim(a)) = p then
+				π2(prim(a)) + cantidadDelProducto(p, fin(a))
+			else
+				cantidadDelProducto(p, fin(a))
+			fi
+		fi
+		
+Fin TAD
+
+TAD Cantidad es int
+TAD Producto es string

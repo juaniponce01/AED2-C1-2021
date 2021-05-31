@@ -6,9 +6,9 @@
 #include <vector>
 
 #if EJ == 4 || EJ == 5
-#include "Proxy.h"
+#include "Proxy.cpp"
 #elif EJ == 6
-#include "Proxy2.h"
+#include "Proxy2.cpp"
 #endif
 
 using namespace std;

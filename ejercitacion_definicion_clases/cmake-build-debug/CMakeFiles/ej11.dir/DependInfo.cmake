@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/test_recordatorios.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/ej11.dir/tests/test_recordatorios.cpp.o"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/test_recordatorios.cpp" "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/ej11.dir/tests/test_recordatorios.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -19,8 +19,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

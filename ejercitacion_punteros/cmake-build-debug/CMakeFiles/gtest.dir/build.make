@@ -62,10 +62,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros
+CMAKE_SOURCE_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gtest.dir/depend.make
@@ -78,16 +78,16 @@ include CMakeFiles/gtest.dir/flags.make
 
 CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o: CMakeFiles/gtest.dir/flags.make
 CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o: ../tests/gtest-1.8.1/gtest-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc
 
 CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc > CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc > CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.i
 
 CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc -o CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/gtest-1.8.1/gtest-all.cc -o CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -99,7 +99,7 @@ gtest_EXTERNAL_OBJECTS =
 libgtest.a: CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o
 libgtest.a: CMakeFiles/gtest.dir/build.make
 libgtest.a: CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
@@ -113,6 +113,6 @@ CMakeFiles/gtest.dir/clean:
 .PHONY : CMakeFiles/gtest.dir/clean
 
 CMakeFiles/gtest.dir/depend:
-	cd /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gtest.dir/depend
 

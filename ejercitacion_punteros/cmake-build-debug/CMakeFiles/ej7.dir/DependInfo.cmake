@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/ConexionJugador.cpp.o"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/Internet.cpp.o"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/SistemaDeMensajes.cpp.o"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests_bonus.cpp" "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/tests/sdm_tests_bonus.cpp.o"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp" "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/ConexionJugador.cpp.o"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp" "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/Internet.cpp.o"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp" "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/src/SistemaDeMensajes.cpp.o"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests_bonus.cpp" "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej7.dir/tests/sdm_tests_bonus.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -22,8 +22,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

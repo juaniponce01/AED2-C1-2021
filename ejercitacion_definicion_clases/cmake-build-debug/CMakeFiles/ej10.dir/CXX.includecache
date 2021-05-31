@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.cpp
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.cpp
 iostream
 -
 list
 -
+Recordatorios.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.h
 
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/gtest.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.h
+
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/gtest.h
 limits
 -
 ostream
@@ -154,21 +158,21 @@ vector
 tuple
 -
 absl/strings/string_view.h
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/strings/string_view.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/strings/string_view.h
 absl/types/optional.h
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/types/optional.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/types/optional.h
 absl/types/variant.h
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/types/variant.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/absl/types/variant.h
 iosfwd
 -
 vector
 -
 
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/test_recordatorios.cpp
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/test_recordatorios.cpp
 gtest-1.8.1/gtest.h
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/gtest.h
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/tests/gtest-1.8.1/gtest.h
 ../src/Recordatorios.cpp
-/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.cpp
+/Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/src/Recordatorios.cpp
 sstream
 -
 

@@ -62,10 +62,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros
+CMAKE_SOURCE_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ej6.dir/depend.make
@@ -78,68 +78,68 @@ include CMakeFiles/ej6.dir/flags.make
 
 CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o: CMakeFiles/ej6.dir/flags.make
 CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o: ../tests/sdm_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/tests/sdm_tests.cpp.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp
 
 CMakeFiles/ej6.dir/tests/sdm_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ej6.dir/tests/sdm_tests.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp > CMakeFiles/ej6.dir/tests/sdm_tests.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp > CMakeFiles/ej6.dir/tests/sdm_tests.cpp.i
 
 CMakeFiles/ej6.dir/tests/sdm_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ej6.dir/tests/sdm_tests.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp -o CMakeFiles/ej6.dir/tests/sdm_tests.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/tests/sdm_tests.cpp -o CMakeFiles/ej6.dir/tests/sdm_tests.cpp.s
 
 CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o: CMakeFiles/ej6.dir/flags.make
 CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o: ../src/SistemaDeMensajes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp
 
 CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp > CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp > CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.i
 
 CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp -o CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/SistemaDeMensajes.cpp -o CMakeFiles/ej6.dir/src/SistemaDeMensajes.cpp.s
 
 CMakeFiles/ej6.dir/src/Proxy2.cpp.o: CMakeFiles/ej6.dir/flags.make
 CMakeFiles/ej6.dir/src/Proxy2.cpp.o: ../src/Proxy2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ej6.dir/src/Proxy2.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/Proxy2.cpp.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ej6.dir/src/Proxy2.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/Proxy2.cpp.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp
 
 CMakeFiles/ej6.dir/src/Proxy2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ej6.dir/src/Proxy2.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp > CMakeFiles/ej6.dir/src/Proxy2.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp > CMakeFiles/ej6.dir/src/Proxy2.cpp.i
 
 CMakeFiles/ej6.dir/src/Proxy2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ej6.dir/src/Proxy2.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp -o CMakeFiles/ej6.dir/src/Proxy2.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Proxy2.cpp -o CMakeFiles/ej6.dir/src/Proxy2.cpp.s
 
 CMakeFiles/ej6.dir/src/Internet.cpp.o: CMakeFiles/ej6.dir/flags.make
 CMakeFiles/ej6.dir/src/Internet.cpp.o: ../src/Internet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ej6.dir/src/Internet.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/Internet.cpp.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ej6.dir/src/Internet.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/Internet.cpp.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp
 
 CMakeFiles/ej6.dir/src/Internet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ej6.dir/src/Internet.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp > CMakeFiles/ej6.dir/src/Internet.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp > CMakeFiles/ej6.dir/src/Internet.cpp.i
 
 CMakeFiles/ej6.dir/src/Internet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ej6.dir/src/Internet.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp -o CMakeFiles/ej6.dir/src/Internet.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/Internet.cpp -o CMakeFiles/ej6.dir/src/Internet.cpp.s
 
 CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o: CMakeFiles/ej6.dir/flags.make
 CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o: ../src/ConexionJugador.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o -c /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ej6.dir/src/ConexionJugador.cpp.o -c /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp
 
 CMakeFiles/ej6.dir/src/ConexionJugador.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ej6.dir/src/ConexionJugador.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp > CMakeFiles/ej6.dir/src/ConexionJugador.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp > CMakeFiles/ej6.dir/src/ConexionJugador.cpp.i
 
 CMakeFiles/ej6.dir/src/ConexionJugador.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ej6.dir/src/ConexionJugador.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp -o CMakeFiles/ej6.dir/src/ConexionJugador.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/src/ConexionJugador.cpp -o CMakeFiles/ej6.dir/src/ConexionJugador.cpp.s
 
 # Object files for target ej6
 ej6_OBJECTS = \
@@ -161,7 +161,7 @@ ej6: CMakeFiles/ej6.dir/build.make
 ej6: libgtest.a
 ej6: libgtest_main.a
 ej6: CMakeFiles/ej6.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ej6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ej6"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ej6.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,6 +174,6 @@ CMakeFiles/ej6.dir/clean:
 .PHONY : CMakeFiles/ej6.dir/clean
 
 CMakeFiles/ej6.dir/depend:
-	cd /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej6.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej6.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ej6.dir/depend
 

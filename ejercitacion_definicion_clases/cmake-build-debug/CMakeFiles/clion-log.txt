@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases
 -- The C compiler identification is AppleClang 11.0.3.11030032
 -- The CXX compiler identification is AppleClang 11.0.3.11030032
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug
+-- Build files have been written to: /Users/juaniponce/github/AED2-C1-2021/ejercitacion_definicion_clases/cmake-build-debug

@@ -62,10 +62,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros
+CMAKE_SOURCE_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug
 
 # Utility rule file for ej3_correrValgrind.
 
@@ -90,6 +90,6 @@ CMakeFiles/ej3_correrValgrind.dir/clean:
 .PHONY : CMakeFiles/ej3_correrValgrind.dir/clean
 
 CMakeFiles/ej3_correrValgrind.dir/depend:
-	cd /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/Documents/GitHub/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej3_correrValgrind.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug /Users/juaniponce/github/AED2-C1-2021/ejercitacion_punteros/cmake-build-debug/CMakeFiles/ej3_correrValgrind.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ej3_correrValgrind.dir/depend
 

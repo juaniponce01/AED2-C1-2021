@@ -1,0 +1,107 @@
+2)
+Representación:
+	banco se representa con lista(nat)
+	
+donde: lista tiene la cantidad total de personas hasta el i-esimo dia. Es decir, cada valor de la lista va acumulando la cantidad anterior en el proximo elemento.
+
+Invariante de Representación:
+	- cada valor en la lista debe ser la sumatoria de los elementos anteriores
+
+Interfaz:
+	Algoritmos del módulo:
+		icomenzar() -> res: banco
+			res ← vacia()
+		---
+		iterminarDia(in/out i: banco, in n: nat)
+			agregarAdelante(i, i.ultimo + n)
+		---
+		icantPersonas(in i: banco, in d: nat, in h: nat) -> res: nat
+			res ← i[h-1] - i[d-1]
+		---
+
+3)
+Representación:
+	torneo se representa con conjLog(tupla( equipo: string, puntos: nat, posicion: nat))
+	
+donde: conjLog tiene la misma interfaz que conjLineal pero mantiene la complejidad de un AVL.
+
+Invariante de Representación:
+	- los equipos deben ser distintos entre si
+	- las posiciones de los equipos deben ser numeros que empiecen del 1 y que sean consecutivos, es decir, que solo puede existir un numero si ya existen equipos que tengan los numeros anteriores.
+	- la cant de puntos depende de la posicion en el ranking, por lo tanto, el mayor puntaje tendra posicion 1, y el menor tendra la minima posicion posible. Es decir, si cant de puntos del equipo a es mayor a cant de puntos del equipo b, entonces la posicion de a sera mejor que la posicion de b
+
+Interfaz:
+	Algoritmos del módulo:
+		ipuntos(in t: torneo, in e: equipo) -> res: nat
+			it ← crearIt(t)
+			while haySiguiente(it) do
+				if siguiente(it).equipo = e then
+					res ← siguiente(it).puntos					
+				end if
+				avanzar(it)
+			end while
+		---
+		iregPartido(in/out t: torneo, in g: equipo, in p: equipo)
+			it ← crearIt(t)
+			while haySiguiente(it) do
+				if siguiente(it).equipo = g then
+					siguiente(it).puntos ← siguiente(it).puntos + 1					
+				end if
+				avanzar(it)
+			end while
+		---
+		ipos(in t: torneo, in e: equipo) -> res: nat
+			it ← crearIt(t)
+			while haySiguiente(it) do
+				if siguiente(it).equipo = e then
+					res ← siguiente(it).posicion					
+				end if
+				avanzar(it)
+			end while
+		---
+
+4)
+Representación:
+	AED2Company se representa con estr donde 
+		estr es tupla ⟨	
+		universidades: diccLog(universidad, conjLineal(linea)),
+		lineas: diccTrie(linea, conjLineal(universidad)) 
+		⟩ 
+donde: diccLog es un diccLineal con complejidades logaritmicar de busqueda ya que es un AVL, mientras que diccTrie tiene complejidad de busqueda |k| por ser un Trie 
+
+Invariante de Representación:
+	-
+
+Interfaz:
+	Algoritmos del módulo:
+		iagregarUniversidad(in/out a: AED2Company, in u: universidad)
+			definirRapido(a.universidades, u, vacia())
+		---
+		ieliminarUniversidad(in/out a: AED2Company, in u: universidad)
+			borrar(a.universidades, u)
+		---
+		iagregarLinea(in/out a: AED2Company, in l: linea, in cu: conj(universidad))
+			definirRapido(a.lineas, l, cu)
+		---
+		ieliminarLinea(in/out a: AED2Company, in l: linea)
+			borrar(a.lineas, l)
+		---
+
+5)
+Representación:
+	multar se representa con estr donde 
+		estr es tupla ⟨	
+						vehiculos: diccTrie(localidad, conjAVL(vehiculo))
+						camaras: diccTrie(localidad, conjAVL(camara))  
+						multas: diccTrie(localidad, conjAVL(multa))
+						⟩
+
+Invariante de Representación:
+	-
+
+Interfaz:
+	Algoritmos del módulo:
+		iregistrarVehiculo(in v: vehiculo, in/out n: nat) -> res: multar
+			
+		---
+			

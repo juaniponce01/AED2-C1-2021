@@ -1,6 +1,6 @@
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest.dir
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest_main.dir
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrTests.dir
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrValgrind.dir
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrValgrind.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrTests.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest_main.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest.dir

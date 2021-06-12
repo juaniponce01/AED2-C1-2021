@@ -4,8 +4,10 @@ template <class T>
 Conjunto<T>::Conjunto() : _raiz(nullptr), _longitud(0) {};
 
 template <class T>
-Conjunto<T>::~Conjunto() { 
-    // Completar
+Conjunto<T>::~Conjunto() {
+    while(_longitud > 0){
+        remover(minimo());
+    }
 }
 
 template <class T>
@@ -64,44 +66,54 @@ void Conjunto<T>::remover(const T& clave) {
     while (n->valor != clave) {
         (n->valor < clave)? n = n->der : n = n->izq;
     }
-    if (n->esHoja()){
-        _longitud--;
-        delete n;
-    } else if (n->der && n->izq){
+    if (n->esHoja()) {
+        if (n->padre) {
+            (n->padre->der == n)? n->padre->der = NULL : n->padre->izq = NULL;
+        } else {
+            _raiz = NULL;
+        }
+    } else if (n->der && n->izq) {
         Nodo* suc = n->der;
         while (suc->izq){
             suc = suc->izq;
         }
-        if (suc->der){
-            if (suc->padre == n){
-                suc->padre->der = suc->der;
-            } else {
-                suc->padre->izq = suc->der;
-            }
-        }
         n->valor = suc->valor;
-        _longitud--;
-        delete suc;
+        if (suc->der) {
+            suc->der->padre = suc->padre;
+            (suc->padre == n)? suc->padre->der = suc->der : suc->padre->izq = suc->der;
+        } else {
+            (suc->padre == n)? suc->padre->der = NULL : suc->padre->izq = NULL;
+        }
+        n = suc;
     } else {
-        if (n->padre){
-            if (n->valor < n->padre->valor){
-                n->padre->izq = n->izq;
-                _longitud--;
-                delete n;
+        if (n->padre) {
+            if (n->der) {
+                if (n->valor < n->padre->valor) {
+                    n->padre->izq = n->der;
+                } else {
+                    n->padre->der = n->der;
+                }
+                n->der->padre = n->padre;
             } else {
-                n->padre->der = n->der;
-                _longitud--;
-                delete n;
+                if (n->valor < n->padre->valor) {
+                    n->padre->izq = n->izq;
+                } else {
+                    n->padre->der = n->izq;
+                }
+                n->izq->padre = n->padre;
             }
         } else {
-            (n->der)? n = n->der : n = n->izq;
-            n->padre->valor = n->valor;
-            n->padre->der = n->der;
-            n->padre->izq = n->izq;
-            _longitud--;
-            delete n;
+            if (n->der){
+                n->der->padre = NULL;
+                _raiz = n->der;
+            } else {
+                n->izq->padre = NULL;
+                _raiz = n->izq;
+            }
         }
     }
+    delete n;
+    _longitud--;
 }
 
 template <class T>

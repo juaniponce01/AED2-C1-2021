@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/tests/conjunto-tests.cpp" "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrTests.dir/tests/conjunto-tests.cpp.obj"
+  "/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/tests/conjunto-tests.cpp" "/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/correrTests.dir/tests/conjunto-tests.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
@@ -14,8 +14,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "C:/Users/Miguel Ponce/Desktop/Juani Docs/Algos2/AED2-C1-2021/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/juaniponce/github/AED2-C1-2021/Laboratorio/taller_conjunto_sobre_ABB/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
